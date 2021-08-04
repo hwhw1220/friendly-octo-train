@@ -87,34 +87,33 @@ section {
     font-size:40px; opacity:1; 
 }
 
-
 /* 세번째 박스 */
-
-.Portfloio {
+/* 포트폴리오1 */
+.portfolio1 {
     width:50%; height: 50%;
     border:3px solid #F00;
     margin:100px 0 0 100px;
     overflow:hidden;
     position:relative;
 }
-.Portfloio .box img {
+.portfolio1 .box img {
     width:761px; height:355px;
     transition:all 0.5s;
 }
-.Portfloio img:hover {
+.portfolio1 img:hover {
     transform:scale(1.2);
     opacity:0.7;
 }
-.Portfloio .box { position:relative}
+.portfolio1 .box { position:relative}
 
-.Portfloio .box a {
+.portfolio1 .box a {
     position:absolute; top:50%;
     left:50%; transform:translate(-50%, -50%); 
     font-size:30px;
     opacity:0; transition:all 0.4s;
     z-index:9999;
 }
-.Portfloio .box:hover a {
+.portfolio1 .box:hover a {
     opacity:1;
 }
 
@@ -192,3 +191,16 @@ section {
     font-size:60px;
     margin:30px 0 0 100px;
 }
+#sect4 .con {
+    margin-left:1100px;
+    margin-top:-300px;
+    font-size:50px;
+}
+#sect4 .con p { padding-bottom:30px }
+#sect4 .fa-phone { padding-right:20px }
+#sect4 .fa-envelope { padding-right:20px }
+#sect4 .con2 {
+    padding-top:80px;
+    margin-left:150px;
+}
+#sect4 .con2 a { padding-right:30px }
