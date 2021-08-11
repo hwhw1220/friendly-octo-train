@@ -2,14 +2,32 @@ $('html, body').stop().animate({
     scrollTop : 0
 }, 1000)
 
+// 클릭누르면 메뉴 순차적으로 생성
+$('.menu li').each(function(index, value){
+    $(this).css({
+        transitionDelay:(index*0.2)+'s'    })
+})
+$('h1').on('click', function(){
+    $('.menu li').addClass('on')
+})
 
-$('.menu li').eq(0).addClass('on')
+// about me 클릭 시 글씨 나오게하기
+$('#sect1 .me').each(function(hi, bye){
+    $(this).css({
+        transitionDelay:(hi*0.5)+'s'      })
+})
+$('.menu li:nth-child(1)').on('click', function(){
+    $('#sect1 .me').addClass('on')
+})
+
+
+// $('.menu li').eq(0).addClass('on')
 var cflag = false;
 $('.menu li a').on('click focus', function(e){
     e.preventDefault()
     cflag = true;
-    $(this).parent().addClass('on')
-    $(this).parent().siblings().removeClass('on')
+    // $(this).parent().addClass('on')
+    // $(this).parent().siblings().removeClass('on')
     var num = $(this).parent().index()
     if (num===0) {
         $('.skillContainer > div').removeClass('on')
@@ -85,16 +103,48 @@ $(window).on('scroll', function(){
 
 })
 
-
+// 섹션0,섹션1, 섹션3 섹마우스휠
 $('section').on('mousewheel', function(event, delta){
-    if (delta>0) {    // 마우스휠을 위로 굴리면 양수
-        $('html, body').stop().animate({
-            scrollTop: $(this).prev().offset().top
-        }, 600)
-    } else if (delta<0) {  // 마우스휠을 아래로 굴리면 음수
-        $('html, body').stop().animate({
-            scrollTop: $(this).next().offset().top
-        }, 600)
+    let snum = $(this).index()
+    if (snum===0 || snum===1 || snum===3) {
+        if (delta>0) {
+            $('html, body').stop().animate({
+                scrollTop: $(this).prev().offset().top
+            }, 600)
+        } else if (delta<0) {
+            $('html, body').stop().animate({
+                scrollTop: $(this).next().offset().top
+            }, 600)
+        }
+    } 
+})
+
+$('#sect3 > div').on('mousewheel', function(event, delta){
+    let dnum = $(this).index()
+    if (delta>0) {
+        if (dnum===0) {
+            $('html, body').stop().animate({
+                scrollTop: $(this).parent().prev().offset().top,
+                scrollLeft:0
+            }, 600)
+        } else {
+            $('html, body').stop().animate({
+                scrollTop: $(this).parent().offset().top,
+                scrollLeft:$(this).prev().offset().left
+            }, 600)
+        }
+    } else if (delta<0) {
+        if (dnum===2) {
+            $('html, body').stop().animate({
+                scrollTop: $(this).parent().next().offset().top,
+                scrollLeft:0
+            }, 600)
+        } else {
+            $('html, body').stop().animate({
+                scrollTop: $(this).parent().offset().top,
+                scrollLeft:$(this).next().offset().left
+            }, 600)
+        }
     }
 })
 
