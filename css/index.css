@@ -59,10 +59,15 @@ h1 {
 #sect1 .me.on {
     opacity:1;
 }
-
-
-
-
+#sect1 img {
+    position:absolute;
+    top:70px; right:50px;
+    width:300px;
+    animation: blinker 3s linear infinite;
+}
+@keyframes blinker { 
+    50% { opacity: 0.1; }
+}
 
 /* 두번째 박스(스킬 그래프) */
 #sect2 h2 {
@@ -93,9 +98,9 @@ h1 {
     .skillContainer > div.react > .score { width:0%; background:#6B307E; transition-delay: 0s;}
     .skillContainer> div.html.on > .score { width:80%; transition-delay: 0s;}
     .skillContainer> div.css.on > .score { width:80%;  transition-delay: 0.5s;}
-    .skillContainer> div.script.on > .score { width:70%; transition-delay: 1s;}
-    .skillContainer> div.jquery.on > .score { width:60%; transition-delay: 1.5s; }
-    .skillContainer> div.react.on > .score { width:50%;  transition-delay: 2s;}
+    .skillContainer> div.script.on > .score { width:60%; transition-delay: 1s;}
+    .skillContainer> div.jquery.on > .score { width:40%; transition-delay: 1.5s; }
+    .skillContainer> div.react.on > .score { width:20%;  transition-delay: 2s;}
 
 .skillContainer > div > .score > .myscore {
     position:absolute; right:10px; 
@@ -167,9 +172,97 @@ h1 {
     font-size:80px;
 }
 
-#sect3 .detail:hover a i {
+#sect3 .detail:hover a i { display:none }
+
+.detail_box1.on { display:block }
+.detail_box1 { 
+    z-index:99999;
+    position:fixed; 
+    width:50%; height:80%; top:10%; left:25%;
+    background:#E3C4FF;
     display:none;
+    transition:all 1s;
 }
+.detail_box1 img { 
+    width:500px;
+    position:absolute;
+    top:30px; left:15%;
+}
+.detail_box1 .click {
+    position:absolute;
+    top:60%; left:25%;
+}
+.detail_box1 .click h2 { 
+    font-weight:bold;
+    font-size:30px;
+    padding-bottom:50px
+}
+.detail_box1 .click a {
+    font-weight:bold;
+    font-size:20px;
+    padding-left:70px
+}
+
+.detail_box2.on { display:block }
+.detail_box2 { 
+    z-index:99999;
+    position:fixed; 
+    width:50%; height:80%; top:10%; left:25%;
+    background:#B4FFFF;
+    display:none;
+    transition:all 1s;
+}
+.detail_box2 img { 
+    width:500px;
+    position:absolute;
+    top:30px; left:15%;
+}
+.detail_box2 .click {
+    position:absolute;
+    top:60%; left:25%;
+    color:#5D5D5D;
+}
+.detail_box2 .click h2 { 
+    font-weight:bold;
+    font-size:30px;
+    padding-bottom:50px
+}
+.detail_box2 .click a {
+    font-weight:bold;
+    font-size:20px;
+    padding-left:70px
+}
+
+.detail_box3.on { display:block }
+.detail_box3 { 
+    z-index:99999;
+    position:fixed; 
+    width:50%; height:80%; top:10%; left:25%;
+    background:#1712AB;
+    display:none;
+    transition:all 1s;
+}
+.detail_box3 img { 
+    width:500px;
+    position:absolute;
+    top:30px; left:15%;
+}
+.detail_box3 .click {
+    position:absolute;
+    top:60%; left:25%;
+    color:#fff;
+}
+.detail_box3 .click h2 { 
+    font-weight:bold;
+    font-size:30px;
+    padding-bottom:50px
+}
+.detail_box3 .click a {
+    font-weight:bold;
+    font-size:20px;
+    padding-left:70px
+}
+
 
 /* 네번째 박스 */
 #sect4 { position: relative }

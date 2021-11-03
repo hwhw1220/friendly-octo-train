@@ -36,9 +36,9 @@ $('.menu li a').on('click focus', function(e){
             $('.skillContainer > div').addClass('on')
             count(80, '.html', 10)
             count(80, '.css', 20)
-            count(70, '.script', 30)
-            count(60, '.jquery', 40)
-            count(50, '.react', 50)
+            count(60, '.script', 30)
+            count(40, '.jquery', 40)
+            count(20, '.react', 50)
         }
     }
     var secDist = $('section').eq(num).offset().top
@@ -88,9 +88,9 @@ $(window).on('scroll', function(){
             $('.skillContainer > div').addClass('on')
             count(80, '.html', 10)
             count(80, '.css', 20)
-            count(70, '.script', 30)
-            count(60, '.jquery', 40)
-            count(50, '.react', 50)
+            count(60, '.script', 30)
+            count(40, '.jquery', 40)
+            count(20, '.react', 50)
         }
 
     } else if ( sct>=sDist2 && sct<lastSect && !cflag) {
@@ -167,4 +167,16 @@ $('.slideOuter .plpa').on('click', function(){
         $(this).find('i').removeClass('fa-play').addClass('fa-pause')
     }
 
+})
+
+$('.sect31 .detail a').on('click', function(){
+    $('.detail_box1').toggleClass('on')
+})
+
+$('.sect32 .detail a').on('click', function(){
+    $('.detail_box2').toggleClass('on')
+})
+
+$('.sect33 .detail a').on('click', function(){
+    $('.detail_box3').toggleClass('on')
 })
